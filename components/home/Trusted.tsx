@@ -1,49 +1,171 @@
 "use client";
 
-import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
+import {
+  CheckCircle,
+  Award,
+  ShieldCheck,
+  TrendingUp,
+} from "lucide-react";
 
-const marketplaces = [
-  "Amazon",
-  "Flipkart",
-  "Meesho",
-  "Myntra",
-  "AJIO",
-  "Shopify",
-  "Blinkit",
-  "Zepto",
+const features = [
+  "Amazon & Flipkart Experts",
+  "Dedicated Account Management",
+  "Brand Growth Strategy",
+  "Performance Marketing",
 ];
 
 export default function Trusted() {
   return (
-    <section id="marketplaces" className="bg-white py-24">
+    <section
+      id="about"
+      className="bg-white py-24 text-slate-900"
+    >
       <div className="mx-auto max-w-7xl px-6">
-        <div className="mb-14 text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.35em] text-blue-600">
-            MARKETPLACES WE MANAGE
-          </p>
 
-          <h2 className="mt-4 text-5xl font-black text-slate-900">
-            Grow Across Every Marketplace
-          </h2>
+        <div className="grid items-center gap-16 lg:grid-cols-2">
 
-          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-600">
-            We help brands launch, optimize and scale across India's leading
-            ecommerce and quick-commerce platforms.
-          </p>
+          {/* LEFT */}
+          <motion.div
+            initial={{ opacity: 0, x: -60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <span className="rounded-full bg-blue-100 px-4 py-2 text-sm font-bold text-blue-700">
+              ABOUT AVENYX
+            </span>
+
+            <h2 className="mt-6 text-5xl font-black leading-tight">
+              We Build{" "}
+              <span className="text-blue-600">
+                Powerful Ecommerce Brands
+              </span>
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-slate-600">
+              AVENYX SOLUTION helps businesses launch, scale and dominate every
+              major ecommerce marketplace with end-to-end services including
+              listing, branding, advertising, account management and website
+              development.
+            </p>
+
+            <div className="mt-10 space-y-5">
+              {features.map((item) => (
+                <motion.div
+                  key={item}
+                  whileHover={{ x: 8 }}
+                  className="flex items-center gap-3"
+                >
+                  <CheckCircle className="text-green-500" />
+                  <span className="font-medium">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* RIGHT */}
+          <motion.div
+            initial={{ opacity: 0, x: 60 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="grid gap-6 sm:grid-cols-2"
+          >
+
+            {/* Card 1 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+            >
+              <Award
+                className="mb-4 text-blue-600 transition-transform duration-300 group-hover:rotate-6"
+                size={42}
+              />
+
+              <h3 className="text-2xl font-bold">
+                500+ Brands
+              </h3>
+
+              <p className="mt-3 text-slate-600 leading-7">
+                Successfully launched and managed across Amazon, Flipkart,
+                Meesho, Myntra and other leading marketplaces.
+              </p>
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+            >
+              <TrendingUp className="mb-4 text-green-600" size={42} />
+
+              <h3 className="text-2xl font-bold">
+                10X Sales Growth
+              </h3>
+
+              <p className="mt-3 text-slate-600 leading-7">
+                Data-driven strategies that improve traffic,
+                conversion rate and long-term revenue.
+              </p>
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+            >
+              <ShieldCheck className="mb-4 text-cyan-600" size={42} />
+
+              <h3 className="text-2xl font-bold">
+                Trusted Ecommerce Partner
+              </h3>
+
+              <p className="mt-3 text-slate-600 leading-7">
+                From account onboarding to complete marketplace
+                management, we handle everything.
+              </p>
+            </motion.div>
+
+            {/* Card 4 */}
+            <motion.div
+              whileHover={{
+                y: -10,
+                scale: 1.03,
+              }}
+              transition={{ duration: 0.3 }}
+              className="rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-8 text-white shadow-xl hover:shadow-2xl cursor-pointer"
+            >
+              <h3 className="text-2xl font-black">
+                Why Choose AVENYX?
+              </h3>
+
+              <ul className="mt-5 space-y-3">
+                <li>✔ Marketplace Listing</li>
+                <li>✔ Account Management</li>
+                <li>✔ Brand Building</li>
+                <li>✔ Digital Marketing</li>
+                <li>✔ Website Development</li>
+                <li>✔ Quick Commerce</li>
+              </ul>
+            </motion.div>
+
+          </motion.div>
+
         </div>
 
-        <Marquee speed={45} pauseOnHover gradient={false}>
-          {marketplaces.map((name) => (
-            <div
-              key={name}
-              className="mx-4 flex h-40 w-56 items-center justify-center rounded-3xl border border-slate-200 bg-white shadow-lg transition hover:-translate-y-2 hover:border-blue-500 hover:shadow-2xl"
-            >
-              <h3 className="text-2xl font-black text-slate-900">
-                {name}
-              </h3>
-            </div>
-          ))}
-        </Marquee>
       </div>
     </section>
   );

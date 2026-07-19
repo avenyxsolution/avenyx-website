@@ -1,112 +1,233 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Link from "next/link";
+import {
+  ArrowRight,
+  CheckCircle,
+  TrendingUp,
+  ShoppingBag,
+  Store,
+} from "lucide-react";
 
 export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-slate-950 text-white"
+      className="relative overflow-hidden bg-slate-950 pt-36 pb-24 text-white"
     >
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-700/20 via-slate-950 to-slate-900" />
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute -top-40 -left-32 h-96 w-96 rounded-full bg-blue-600/30 blur-[120px]" />
+        <div className="absolute bottom-0 right-0 h-[450px] w-[450px] rounded-full bg-cyan-500/20 blur-[150px]" />
+      </div>
 
-      {/* Background Blur */}
-      <div className="absolute -left-20 top-10 h-72 w-72 rounded-full bg-blue-600/20 blur-[120px]" />
-      <div className="absolute bottom-0 right-0 h-80 w-80 rounded-full bg-cyan-500/10 blur-[140px]" />
+      <div className="relative mx-auto grid max-w-7xl items-center gap-16 px-6 lg:grid-cols-2">
 
-      <div className="relative mx-auto grid min-h-[90vh] max-w-7xl items-center gap-12 px-6 py-20 lg:grid-cols-2">
+        {/* LEFT CONTENT */}
 
-        {/* Left */}
-        <div>
-          <motion.span
-            initial={{ opacity: 0, y: 15 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="inline-block rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-semibold text-blue-400"
-          >
-            India's Complete eCommerce Growth Partner
-          </motion.span>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="mt-8 text-5xl font-black leading-tight md:text-7xl"
-          >
-            Grow Your Brand Across
-            <span className="block text-blue-500">
-              Every Marketplace
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.4 }}
-            className="mt-8 max-w-2xl text-lg leading-8 text-slate-300"
-          >
-            From product listing and account onboarding to account
-            management, advertising, brand building, quick commerce,
-            digital marketing and website development — AVENYX SOLUTION
-            helps businesses scale across Amazon, Flipkart, Meesho,
-            Myntra, AJIO, Shopify, Blinkit and Zepto.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.6 }}
-            className="mt-10 flex flex-wrap gap-4"
-          >
-            <Link
-              href="#contact"
-              className="rounded-xl bg-blue-600 px-8 py-4 font-bold text-white transition hover:bg-blue-700"
-            >
-              Get Free Consultation
-            </Link>
-
-            <Link
-              href="#services"
-              className="rounded-xl border border-slate-700 px-8 py-4 font-bold transition hover:bg-slate-800"
-            >
-              Explore Services
-            </Link>
-          </motion.div>
-        </div>
-
-        {/* Right */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.5 }}
-          className="rounded-3xl border border-slate-800 bg-slate-900/70 p-10 shadow-2xl backdrop-blur"
+          initial={{ opacity: 0, y: 60 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
         >
-          <h3 className="mb-8 text-3xl font-bold">
-            Why Choose AVENYX?
-          </h3>
+          <span className="inline-flex rounded-full border border-blue-500/30 bg-blue-500/10 px-5 py-2 text-sm font-semibold text-blue-400">
+            🚀 India's Complete Ecommerce Growth Partner
+          </span>
 
-          <div className="space-y-5">
+          <h1 className="mt-8 text-5xl font-black leading-tight md:text-7xl">
+            Grow Your Brand
+            <br />
+
+            <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              Across Every Marketplace
+            </span>
+          </h1>
+
+          <p className="mt-8 max-w-2xl text-lg leading-8 text-slate-300">
+            We help brands launch, manage and scale across Amazon,
+            Flipkart, Meesho, Myntra, AJIO, Shopify, Blinkit & Zepto
+            with complete ecommerce solutions.
+          </p>
+
+          {/* Marketplace Tags */}
+
+          <div className="mt-10 flex flex-wrap gap-3">
+
             {[
-              "Marketplace Listing",
-              "Account Management",
-              "Brand Building",
-              "Quick Commerce",
-              "Digital Marketing",
-              "Website Development",
+              "Amazon",
+              "Flipkart",
+              "Meesho",
+              "Myntra",
+              "AJIO",
+              "Shopify",
             ].map((item) => (
-              <div
+              <span
                 key={item}
-                className="rounded-xl border border-slate-800 bg-slate-950 p-4"
+                className="rounded-full border border-slate-700 bg-slate-900 px-4 py-2 text-sm transition hover:border-blue-500 hover:bg-blue-600"
               >
-                <span className="font-semibold">{item}</span>
-              </div>
+                {item}
+              </span>
             ))}
+
           </div>
 
-          <div className="mt-10 rounded-2xl bg-blue-600 p-6 text-center">
-            <h4 className="text-3xl font-black">500+</h4>
-            <p className="mt-2">Brands Growing With Us</p>
+          {/* Buttons */}
+
+          <div className="mt-12 flex flex-wrap gap-5">
+
+            <a
+              href="#contact"
+              className="flex items-center gap-3 rounded-xl bg-blue-600 px-8 py-4 text-lg font-bold transition hover:bg-blue-700"
+            >
+              Get Free Consultation
+              <ArrowRight size={20} />
+            </a>
+
+            <a
+              href="#services"
+              className="rounded-xl border border-slate-700 px-8 py-4 text-lg font-semibold transition hover:border-blue-500 hover:bg-slate-900"
+            >
+              Explore Services
+            </a>
+
+          </div>
+
+          {/* Features */}
+
+          <div className="mt-12 grid gap-4 md:grid-cols-2">
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="text-green-400" />
+              <span>500+ Brands Served</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="text-green-400" />
+              <span>10+ Marketplaces</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="text-green-400" />
+              <span>Dedicated Account Manager</span>
+            </div>
+
+            <div className="flex items-center gap-3">
+              <CheckCircle className="text-green-400" />
+              <span>Complete Ecommerce Solutions</span>
+            </div>
+
+          </div>
+
+        </motion.div>        {/* RIGHT SIDE */}
+
+        <motion.div
+          initial={{ opacity: 0, x: 80 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.9 }}
+          className="relative"
+        >
+          <div className="rounded-[32px] border border-slate-800 bg-white/10 p-8 shadow-2xl backdrop-blur-xl">
+
+            <div className="mb-8 flex items-center justify-between">
+              <h3 className="text-2xl font-bold">
+                Ecommerce Dashboard
+              </h3>
+
+              <span className="rounded-full bg-green-500 px-3 py-1 text-sm font-semibold animate-pulse">
+                LIVE
+              </span>
+            </div>
+
+            <div className="grid gap-5">
+
+              <div className="rounded-2xl bg-slate-900/70 p-5 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800 hover:shadow-2xl">
+                <div className="flex items-center gap-4">
+                  <TrendingUp className="text-green-400" size={36} />
+
+                  <div>
+                    <p className="text-sm text-slate-400">
+                      Monthly Growth
+                    </p>
+
+                    <h2 className="text-3xl font-black text-green-400">
+                      +247%
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-slate-900/70 p-5 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800 hover:shadow-2xl">
+                <div className="flex items-center gap-4">
+                  <ShoppingBag className="text-blue-400" size={36} />
+
+                  <div>
+                    <p className="text-sm text-slate-400">
+                      Products Managed
+                    </p>
+
+                    <h2 className="text-3xl font-black">
+                      10,000+
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+              <div className="rounded-2xl bg-slate-900/70 p-5 transition-all duration-300 hover:-translate-y-2 hover:bg-slate-800 hover:shadow-2xl">
+                <div className="flex items-center gap-4">
+                  <Store className="text-cyan-400" size={36} />
+
+                  <div>
+                    <p className="text-sm text-slate-400">
+                      Active Marketplaces
+                    </p>
+
+                    <h2 className="text-3xl font-black">
+                      10+
+                    </h2>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <div className="mt-8 rounded-3xl bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 p-8 shadow-2xl">
+
+              <p className="text-sm uppercase tracking-widest text-blue-100">
+                AVENYX SOLUTION
+              </p>
+
+              <h3 className="mt-2 text-3xl font-black">
+                Your Complete Ecommerce Growth Partner
+              </h3>
+
+              <p className="mt-4 text-blue-100">
+                Listing • Management • Advertising • Branding • Website Development • Quick Commerce
+              </p>
+
+              <div className="mt-6 flex flex-wrap gap-3">
+
+                {[
+                  "Amazon",
+                  "Flipkart",
+                  "Meesho",
+                  "Myntra",
+                  "AJIO",
+                  "Shopify",
+                  "Blinkit",
+                  "Zepto",
+                ].map((item) => (
+                  <span
+                    key={item}
+                    className="rounded-full bg-white/20 px-4 py-2 text-sm backdrop-blur transition hover:bg-white hover:text-slate-900"
+                  >
+                    {item}
+                  </span>
+                ))}
+
+              </div>
+
+            </div>
+
           </div>
         </motion.div>
 

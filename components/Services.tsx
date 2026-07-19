@@ -1,5 +1,6 @@
 "use client";
 
+import { motion } from "framer-motion";
 import {
   ShoppingBag,
   Store,
@@ -51,8 +52,13 @@ export default function Services() {
     >
       <div className="mx-auto max-w-7xl px-6">
 
-        <div className="mb-16 text-center">
-
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16 text-center"
+        >
           <p className="font-bold uppercase tracking-[0.35em] text-blue-500">
             OUR SERVICES
           </p>
@@ -68,15 +74,18 @@ export default function Services() {
             AVENYX SOLUTION offers complete ecommerce solutions from
             listing to scaling your business across India's top marketplaces.
           </p>
-
-        </div>
+        </motion.div>
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
-
           {services.map((service) => (
-            <div
+            <motion.div
               key={service.title}
-              className="group rounded-3xl border border-slate-800 bg-slate-900 p-8 transition duration-300 hover:-translate-y-3 hover:border-blue-600 hover:shadow-[0_20px_60px_rgba(37,99,235,0.35)]"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5 }}
+              whileHover={{ y: -10 }}
+              className="group rounded-3xl border border-slate-800 bg-slate-900 p-8 hover:border-blue-600 hover:shadow-[0_20px_60px_rgba(37,99,235,0.35)]"
             >
               <div className="mb-6 inline-flex rounded-2xl bg-blue-600/15 p-4 text-blue-500">
                 {service.icon}
@@ -94,9 +103,8 @@ export default function Services() {
                 Learn More
                 <ArrowRight size={18} />
               </button>
-            </div>
+            </motion.div>
           ))}
-
         </div>
 
       </div>
