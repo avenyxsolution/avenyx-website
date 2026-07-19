@@ -1,53 +1,81 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Fashion Brand",
-    text: "AVENYX helped us increase our Amazon sales by 3X within months.",
+    name: "Rahul Sharma",
+    company: "Amazon Seller",
+    review:
+      "AVENYX SOLUTION completely transformed our Amazon business. Sales increased by over 300% within a few months.",
   },
   {
-    name: "Beauty Seller",
-    text: "Their marketplace management and ads team is outstanding.",
+    name: "Priya Patel",
+    company: "Fashion Brand",
+    review:
+      "From product listing to advertising and account management, the team handled everything professionally.",
   },
   {
-    name: "D2C Founder",
-    text: "From listing to branding, everything was handled professionally.",
+    name: "Amit Verma",
+    company: "D2C Brand",
+    review:
+      "Highly recommended! They helped us launch on Flipkart, Meesho and Blinkit with excellent results.",
   },
 ];
 
 export default function Testimonials() {
   return (
-    <section className="bg-slate-950 py-24 text-white">
+    <section id="testimonials" className="bg-slate-950 py-24 text-white">
       <div className="mx-auto max-w-7xl px-6">
-        <div className="text-center">
-          <p className="text-blue-400 font-semibold uppercase tracking-widest">
-            Testimonials
+
+        <div className="mb-16 text-center">
+          <p className="text-sm font-bold uppercase tracking-[0.35em] text-blue-500">
+            TESTIMONIALS
           </p>
 
-          <h2 className="mt-4 text-5xl font-bold">
+          <h2 className="mt-4 text-5xl font-black">
             What Our Clients Say
           </h2>
+
+          <p className="mx-auto mt-6 max-w-3xl text-lg text-slate-400">
+            Trusted by growing brands across India's leading ecommerce
+            marketplaces.
+          </p>
         </div>
 
-        <div className="mt-16 grid gap-8 md:grid-cols-3">
+        <div className="grid gap-8 lg:grid-cols-3">
           {testimonials.map((item) => (
-            <motion.div
+            <div
               key={item.name}
-              whileHover={{ y: -8 }}
-              className="rounded-2xl bg-slate-900 p-8 border border-slate-700"
+              className="rounded-3xl border border-slate-800 bg-slate-900 p-8 transition duration-300 hover:-translate-y-2 hover:border-blue-500 hover:shadow-[0_20px_60px_rgba(37,99,235,0.25)]"
             >
-              <p className="text-gray-300 leading-7">
-                "{item.text}"
+              <div className="mb-5 flex text-yellow-400">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    size={20}
+                    fill="currentColor"
+                  />
+                ))}
+              </div>
+
+              <p className="leading-8 text-slate-300">
+                "{item.review}"
               </p>
 
-              <h3 className="mt-8 text-xl font-bold">
-                {item.name}
-              </h3>
-            </motion.div>
+              <div className="mt-8 border-t border-slate-800 pt-6">
+                <h3 className="text-xl font-bold">
+                  {item.name}
+                </h3>
+
+                <p className="text-slate-400">
+                  {item.company}
+                </p>
+              </div>
+            </div>
           ))}
         </div>
+
       </div>
     </section>
   );
