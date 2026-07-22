@@ -18,7 +18,7 @@ const features = [
 export default function Trusted() {
   return (
     <section
-      id="about"
+      id="trusted"
       className="bg-white py-24 text-slate-900"
     >
       <div className="mx-auto max-w-7xl px-6">
@@ -80,10 +80,10 @@ export default function Trusted() {
                 scale: 1.03,
               }}
               transition={{ duration: 0.3 }}
-              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <Award
-                className="mb-4 text-blue-600 transition-transform duration-300 group-hover:rotate-6"
+                className="mb-4 text-blue-600"
                 size={42}
               />
 
@@ -104,7 +104,7 @@ export default function Trusted() {
                 scale: 1.03,
               }}
               transition={{ duration: 0.3 }}
-              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <TrendingUp className="mb-4 text-green-600" size={42} />
 
@@ -125,7 +125,7 @@ export default function Trusted() {
                 scale: 1.03,
               }}
               transition={{ duration: 0.3 }}
-              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg hover:shadow-2xl cursor-pointer"
+              className="rounded-3xl border border-slate-200 bg-white p-8 shadow-lg cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <ShieldCheck className="mb-4 text-cyan-600" size={42} />
 
@@ -146,7 +146,7 @@ export default function Trusted() {
                 scale: 1.03,
               }}
               transition={{ duration: 0.3 }}
-              className="rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-8 text-white shadow-xl hover:shadow-2xl cursor-pointer"
+              className="rounded-3xl bg-gradient-to-br from-blue-600 to-cyan-500 p-8 text-white shadow-xl cursor-pointer transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl"
             >
               <h3 className="text-2xl font-black">
                 Why Choose AVENYX?

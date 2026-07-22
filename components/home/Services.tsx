@@ -5,50 +5,135 @@ import {
   Store,
   Megaphone,
   Globe,
-  BarChart3,
   ShoppingBag,
   PenTool,
   ArrowRight,
+  Search,
+  Briefcase,
+  TrendingUp,
+  CheckCircle,
 } from "lucide-react";
+
 
 const services = [
   {
     icon: Store,
-    title: "Marketplace Listing",
+    title: "Marketplace Onboarding",
     description:
-      "Professional product listing for Amazon, Flipkart, Meesho, Myntra, AJIO, Shopify, Tata Cliq, Snapdeal and other marketplaces.",
+      "Complete marketplace setup from scratch including documentation, account creation, brand approvals and category onboarding across leading Indian and global platforms.",
+    points: [
+      "Amazon, Flipkart & Meesho onboarding",
+      "Myntra, AJIO & Snapdeal setup",
+      "Etsy, Alibaba & Global marketplace support",
+      "Complete documentation assistance",
+    ],
   },
-  {
-    icon: BarChart3,
-    title: "Account Management",
-    description:
-      "Complete marketplace account handling including orders, inventory, catalog, returns and performance monitoring.",
-  },
-  {
-    icon: Megaphone,
-    title: "Performance Marketing",
-    description:
-      "Increase sales through Amazon Ads, Flipkart Ads, Meta Ads and Google Ads with ROI-focused campaigns.",
-  },
+
   {
     icon: ShoppingBag,
-    title: "Quick Commerce",
+    title: "Account Management",
     description:
-      "Launch and grow your business on Blinkit, Zepto, Instamart, BigBasket and other quick commerce platforms.",
+      "Complete monthly marketplace management where our experts handle inventory, pricing, listings, customer support, returns and account performance.",
+    points: [
+      "Amazon, Flipkart, Meesho, AJIO",
+      "Inventory & Order Management",
+      "Returns & Customer Support",
+      "Dedicated Account Manager",
+    ],
   },
+
+  {
+    icon: Search,
+    title: "Product Listing & SEO",
+    description:
+      "SEO optimized product listings designed to improve ranking, visibility and conversions across every major marketplace.",
+    points: [
+      "Amazon & Flipkart Listing",
+      "Meesho, Myntra & AJIO Catalog",
+      "Keyword Research",
+      "SEO Content Writing",
+    ],
+  },
+
+  {
+    icon: PenTool,
+    title: "Branding & Store Development",
+    description:
+      "Build a powerful brand identity with premium marketplace branding, A+ content and professional brand stores.",
+    points: [
+      "Brand Registry Setup",
+      "A+ Content Creation",
+      "Brand Store Design",
+      "Premium Brand Identity",
+    ],
+  },
+
+  {
+    icon: Megaphone,
+    title: "Digital Marketing & Ads",
+    description:
+      "Performance-driven marketing campaigns focused on increasing traffic, sales and return on investment.",
+    points: [
+      "Amazon PPC Management",
+      "Flipkart Ads Management",
+      "Google Ads Campaigns",
+      "Meta Ads Marketing",
+    ],
+  },
+
   {
     icon: Globe,
     title: "Website Development",
     description:
-      "Modern Shopify and Next.js websites designed for high conversions, speed and premium user experience.",
+      "High-performance ecommerce websites and custom digital solutions built using modern technologies.",
+    points: [
+      "Shopify & WooCommerce Stores",
+      "React & Next.js Websites",
+      "AI Powered Solutions",
+      "WordPress Development",
+    ],
   },
+
   {
-    icon: PenTool,
-    title: "Brand Building",
+    icon: Briefcase,
+    title: "Business Setup",
     description:
-      "Brand Registry, A+ Content, Brand Store, SEO, Premium Images and complete ecommerce branding solutions.",
+      "Complete business setup support to help brands start and operate professionally with required compliance.",
+    points: [
+      "Payment Gateway Setup",
+      "MSME Registration",
+      "Import Export License",
+      "Compliance Support",
+    ],
+  },
+
+  {
+    icon: Globe,
+    title: "International Marketplace",
+    description:
+      "Expand your business globally with expert marketplace management and international ecommerce solutions.",
+    points: [
+      "Amazon Global Selling",
+      "Etsy Marketplace",
+      "eBay Account Management",
+      "Alibaba Management",
+    ],
+  },
+
+  {
+    icon: TrendingUp,
+    title: "Growth & Strategy",
+    description:
+      "Data-driven ecommerce strategies that help brands increase revenue and build long-term growth.",
+    points: [
+      "Sales Growth Planning",
+      "Competitor Analysis",
+      "Marketplace Expansion",
+      "Performance Reports",
+    ],
   },
 ];
+
 
 export default function Services() {
   return (
@@ -56,12 +141,16 @@ export default function Services() {
       id="services"
       className="relative overflow-hidden bg-gradient-to-b from-slate-950 via-slate-900 to-black py-24 text-white"
     >
+
       {/* Background Glow */}
 
       <div className="absolute -top-40 left-0 h-96 w-96 rounded-full bg-blue-600/20 blur-[150px]" />
+
       <div className="absolute bottom-0 right-0 h-96 w-96 rounded-full bg-cyan-500/20 blur-[150px]" />
 
+
       <div className="relative mx-auto max-w-7xl px-6">
+
 
         {/* Heading */}
 
@@ -71,97 +160,181 @@ export default function Services() {
             OUR SERVICES
           </p>
 
+
           <h2 className="mt-5 text-5xl font-black">
-            Everything Your Brand
+
+            Complete Ecommerce
+
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-              {" "}Needs
+              {" "}Growth Solutions
             </span>
+
           </h2>
 
+
           <p className="mx-auto mt-6 max-w-3xl text-lg leading-8 text-slate-300">
-            AVENYX SOLUTION provides complete ecommerce services to help
-            businesses launch, manage and scale across India's leading
-            marketplaces.
+
+            From marketplace onboarding to brand building,
+            advertising and website development, AVENYX SOLUTION
+            helps businesses launch, manage and scale online.
+
           </p>
 
         </div>
 
+
+
         {/* Cards */}
+
 
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
 
-          {services.map((service, index) => {
+
+          {services.map((service,index)=>{
 
             const Icon = service.icon;
 
-            return (
+
+            return(
 
               <motion.div
+
                 key={service.title}
-                initial={{ opacity: 0, y: 40 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.12 }}
-                whileHover={{
-                  y: -10,
-                  scale: 1.03,
+
+                initial={{
+                  opacity:0,
+                  y:40
                 }}
-                className="group rounded-3xl border border-slate-800 bg-white/5 p-8 backdrop-blur-lg transition-all duration-300 hover:border-blue-500 hover:bg-white/10 hover:shadow-[0_0_40px_rgba(59,130,246,0.25)]"
+
+                whileInView={{
+                  opacity:1,
+                  y:0
+                }}
+
+                viewport={{
+                  once:true
+                }}
+
+                transition={{
+                  delay:index*0.1
+                }}
+
+                whileHover={{
+                  y:-10,
+                  scale:1.03
+                }}
+
+                className="
+                group
+                rounded-3xl
+                border
+                border-slate-800
+                bg-white/5
+                p-8
+                backdrop-blur-xl
+                transition-all
+                duration-300
+                hover:border-blue-500
+                hover:bg-white/10
+                hover:shadow-2xl
+                "
+
               >
 
-                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-blue-600 to-cyan-500 transition-transform duration-300 group-hover:rotate-6">
-                  <Icon size={32} />
+
+                <div className="
+                mb-6
+                flex
+                h-16
+                w-16
+                items-center
+                justify-center
+                rounded-2xl
+                bg-gradient-to-r
+                from-blue-600
+                to-cyan-500
+                transition
+                group-hover:rotate-6
+                ">
+
+                  <Icon size={32}/>
+
                 </div>
+
+
 
                 <h3 className="text-2xl font-bold">
                   {service.title}
                 </h3>
 
-                <p className="mt-5 leading-8 text-slate-300">
+
+
+                <p className="mt-4 leading-7 text-slate-300">
                   {service.description}
                 </p>
 
-                <button className="mt-8 inline-flex items-center gap-2 font-semibold text-blue-400 transition group-hover:gap-4">
 
-                  Learn More
 
-                  <ArrowRight size={18} />
+                <ul className="mt-6 space-y-3">
+
+                  {service.points.map((point)=>(
+
+                    <li
+                    key={point}
+                    className="flex items-center gap-3 text-sm text-slate-200"
+                    >
+
+                      <CheckCircle
+                      size={17}
+                      className="text-cyan-400"
+                      />
+
+                      {point}
+
+                    </li>
+
+                  ))}
+
+
+                </ul>
+
+
+
+                <button
+                className="
+                mt-8
+                flex
+                items-center
+                gap-2
+                font-semibold
+                text-blue-400
+                transition-all
+                group-hover:gap-4
+                "
+                >
+
+                  Get Started
+
+                  <ArrowRight size={18}/>
 
                 </button>
 
+
               </motion.div>
 
-            );
+
+            )
+
 
           })}
 
-        </div>
-
-        {/* Bottom CTA */}
-
-        <div className="mt-20 rounded-3xl bg-gradient-to-r from-blue-600 via-cyan-500 to-blue-700 p-10 text-center shadow-2xl">
-
-          <h3 className="text-4xl font-black">
-            Ready to Grow Your Business?
-          </h3>
-
-          <p className="mx-auto mt-5 max-w-3xl text-blue-100">
-            Whether you're a startup, growing brand or enterprise,
-            AVENYX SOLUTION helps you achieve faster growth across
-            Amazon, Flipkart, Meesho, Shopify and Quick Commerce.
-          </p>
-
-          <a
-            href="#contact"
-            className="mt-8 inline-flex items-center gap-3 rounded-xl bg-white px-8 py-4 font-bold text-blue-700 transition hover:scale-105 hover:bg-slate-100"
-          >
-            Get Free Consultation
-            <ArrowRight size={20} />
-          </a>
 
         </div>
+
 
       </div>
+
+
     </section>
   );
 }

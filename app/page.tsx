@@ -19,20 +19,33 @@ export default function Home() {
     <>
       <Navbar />
 
-      <main className="overflow-x-hidden">
+      <main
+        id="main-content"
+        className="min-h-screen overflow-x-hidden bg-white"
+      >
         <Hero />
+
         <About />
+
         <Trusted />
+
         <Services />
+
         <Process />
+
         <Stats />
+
         <Pricing />
+
         <Testimonials />
+
         <FAQ />
+
         <Contact />
       </main>
 
       <Footer />
+
       <WhatsApp />
     </>
   );

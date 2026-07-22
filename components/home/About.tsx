@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import {
   Globe,
   ShoppingCart,
@@ -36,6 +36,7 @@ const features = [
 ];
 
 export default function About() {
+  const reduceMotion = useReducedMotion();
   return (
     <section
       id="about"
@@ -47,7 +48,7 @@ export default function About() {
 
           {/* LEFT */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={reduceMotion ? false : { opacity: 0, x: -60 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
@@ -114,13 +115,13 @@ export default function About() {
 
               <a
                 href="#contact"
-                className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:scale-105 hover:bg-blue-700"
+                className="rounded-xl bg-blue-600 px-8 py-4 font-semibold text-white transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:bg-blue-700"
               >
                 Get Free Consultation
               </a>
 
               <a
-                href="#marketplaces"
+                href="#services"
                 className="rounded-xl border border-slate-300 px-8 py-4 font-semibold transition-all duration-300 hover:border-blue-600 hover:text-blue-600"
               >
                 Explore Services

@@ -1,122 +1,233 @@
 "use client";
 
-import { Mail, Phone } from "lucide-react";
 import {
-  FaWhatsapp,
-  FaInstagram,
-  FaLinkedin,
-  FaGlobe,
-} from "react-icons/fa";
+  Instagram,
+  Linkedin,
+  Facebook,
+  Mail,
+  Phone,
+  MapPin,
+  ArrowRight,
+} from "lucide-react";
 
 export default function Footer() {
   return (
     <footer className="bg-slate-950 text-white">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
 
-          {/* Company */}
-          <div>
-            <h2 className="text-3xl font-bold text-blue-500">
-              AVENYX SOLUTION
-            </h2>
+      {/* TOP SECTION */}
+      <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 lg:grid-cols-4">
 
-            <p className="mt-4 text-gray-400 leading-7">
-              India's Complete eCommerce Growth Partner for Amazon, Flipkart,
-              Meesho, Myntra, AJIO, Shopify, Blinkit, Zepto and Digital
-              Marketing.
-            </p>
+
+        {/* COMPANY */}
+        <div>
+
+          <h2 className="text-3xl font-black">
+            AVENYX
+            <span className="text-blue-500">
+              SOLUTION
+            </span>
+          </h2>
+
+          <p className="mt-5 leading-7 text-slate-400">
+            Complete ecommerce growth partner helping brands
+            launch, manage and scale across marketplaces,
+            quick commerce and digital platforms.
+          </p>
+
+
+          <div className="mt-6 flex gap-4">
+
+            <a
+              href="#"
+              className="rounded-xl bg-white/10 p-3 transition hover:bg-blue-600"
+            >
+              <Instagram size={20}/>
+            </a>
+
+
+            <a
+              href="#"
+              className="rounded-xl bg-white/10 p-3 transition hover:bg-blue-600"
+            >
+              <Linkedin size={20}/>
+            </a>
+
+
+            <a
+              href="#"
+              className="rounded-xl bg-white/10 p-3 transition hover:bg-blue-600"
+            >
+              <Facebook size={20}/>
+            </a>
+
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="mb-5 text-xl font-semibold">
-              Services
-            </h3>
+        </div>
 
-            <ul className="space-y-3 text-gray-400">
-              <li>Marketplace Management</li>
-              <li>Product Listing</li>
-              <li>Quick Commerce</li>
-              <li>Digital Marketing</li>
-              <li>Website Development</li>
-            </ul>
-          </div>
 
-          {/* Company */}
-          <div>
-            <h3 className="mb-5 text-xl font-semibold">
-              Company
-            </h3>
 
-            <ul className="space-y-3 text-gray-400">
-              <li>About Us</li>
-              <li>Our Services</li>
-              <li>Pricing</li>
-              <li>Contact</li>
-            </ul>
-          </div>
+        {/* SERVICES */}
+        <div>
 
-          {/* Contact */}
-          <div>
-            <h3 className="mb-5 text-xl font-semibold">
-              Contact
-            </h3>
+          <h3 className="text-xl font-bold">
+            Services
+          </h3>
 
-            <div className="space-y-4 text-gray-400">
 
-              <div className="flex items-center gap-3">
-                <Phone size={18} />
-                <span>+91 94267 55807</span>
-              </div>
+          <ul className="mt-6 space-y-4 text-slate-400">
 
-              <div className="flex items-center gap-3">
-                <Mail size={18} />
-                <span>hello.avenyx@gmail.com</span>
-              </div>
+            <li>
+              Marketplace Onboarding
+            </li>
 
-              <div className="flex gap-4 pt-4">
+            <li>
+              Account Management
+            </li>
 
-                <a
-                  href="https://wa.me/919426755807"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full bg-slate-800 p-3 transition hover:bg-green-600"
-                >
-                  <FaWhatsapp size={18} />
-                </a>
+            <li>
+              Product Listing & SEO
+            </li>
 
-                <a
-                  href="#"
-                  className="rounded-full bg-slate-800 p-3 transition hover:bg-pink-600"
-                >
-                  <FaInstagram size={18} />
-                </a>
+            <li>
+              Digital Marketing
+            </li>
 
-                <a
-                  href="#"
-                  className="rounded-full bg-slate-800 p-3 transition hover:bg-blue-600"
-                >
-                  <FaLinkedin size={18} />
-                </a>
+            <li>
+              Website Development
+            </li>
 
-                <a
-                  href="#"
-                  className="rounded-full bg-slate-800 p-3 transition hover:bg-sky-600"
-                >
-                  <FaGlobe size={18} />
-                </a>
+          </ul>
 
-              </div>
+        </div>
+
+
+
+        {/* MARKETPLACES */}
+        <div>
+
+          <h3 className="text-xl font-bold">
+            Marketplaces
+          </h3>
+
+
+          <ul className="mt-6 space-y-4 text-slate-400">
+
+            <li>Amazon</li>
+            <li>Flipkart</li>
+            <li>Meesho</li>
+            <li>Myntra</li>
+            <li>AJIO</li>
+            <li>Shopify</li>
+
+          </ul>
+
+        </div>
+                {/* CONTACT */}
+        <div>
+
+          <h3 className="text-xl font-bold">
+            Contact Us
+          </h3>
+
+
+          <div className="mt-6 space-y-5 text-slate-400">
+
+
+            <a
+              href="tel:+919426755807"
+              className="flex items-center gap-3 transition hover:text-white"
+            >
+              <Phone size={18} className="text-blue-500" />
+              +91 9426755807
+            </a>
+
+
+            <a
+              href="mailto:hello.avenyx@gmail.com"
+              className="flex items-center gap-3 transition hover:text-white"
+            >
+              <Mail size={18} className="text-blue-500" />
+              hello.avenyx@gmail.com
+            </a>
+
+
+            <div className="flex items-start gap-3">
+              <MapPin 
+                size={18}
+                className="mt-1 text-blue-500"
+              />
+
+              <span>
+                Surat, Gujarat, India
+              </span>
 
             </div>
+
+
           </div>
 
+
+          <a
+            href="#contact"
+            className="
+            mt-8
+            inline-flex
+            items-center
+            gap-3
+            rounded-xl
+            bg-blue-600
+            px-6
+            py-3
+            font-bold
+            transition
+            hover:bg-blue-700
+            "
+          >
+
+            Get Started
+
+            <ArrowRight size={18}/>
+
+          </a>
+
+
         </div>
 
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-gray-500">
-          © 2026 AVENYX SOLUTION. All Rights Reserved.
-        </div>
+
       </div>
+
+
+      {/* BOTTOM */}
+
+      <div className="border-t border-white/10">
+
+        <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-6 text-sm text-slate-400 md:flex-row md:items-center md:justify-between">
+
+
+          <p>
+            © {new Date().getFullYear()} AVENYX SOLUTION.
+            All rights reserved.
+          </p>
+
+
+          <div className="flex gap-6">
+
+            <span>
+              Privacy Policy
+            </span>
+
+            <span>
+              Terms & Conditions
+            </span>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
     </footer>
   );
 }
