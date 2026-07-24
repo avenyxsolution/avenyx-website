@@ -1,121 +1,84 @@
 @import "tailwindcss";
 
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
 
 html {
   scroll-behavior: smooth;
 }
 
-
 body {
   margin: 0;
   padding: 0;
-  background: #ffffff;
-  color: #0f172a;
+  background: var(--background);
+  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
 }
 
-
-
-/* Smooth Selection */
-
 ::selection {
   background: #2563eb;
-  color: white;
+  color: #ffffff;
 }
-
-
-
-/* Hide Scrollbar */
 
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-
 ::-webkit-scrollbar-track {
   background: #0f172a;
 }
-
 
 ::-webkit-scrollbar-thumb {
   background: #2563eb;
   border-radius: 20px;
 }
 
-
 ::-webkit-scrollbar-thumb:hover {
   background: #0891b2;
 }
-
-
-
-/* Smooth Images */
 
 img {
   max-width: 100%;
   height: auto;
 }
 
-
-
-/* Remove default button */
-
 button {
   cursor: pointer;
 }
 
-
-
-/* Premium Gradient Text */
-
 .gradient-text {
-
-  background: linear-gradient(
-    90deg,
-    #2563eb,
-    #06b6d4
-  );
-
+  background: linear-gradient(90deg, #2563eb, #06b6d4);
   -webkit-background-clip: text;
   background-clip: text;
-
   color: transparent;
-
 }
-
-
-
-/* Glass Effect */
 
 .glass {
-
-  background: rgba(255,255,255,0.08);
-
+  background: rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
-
-  border: 1px solid rgba(255,255,255,0.1);
-
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-
-
-/* Container */
-
 .container-custom {
-
   max-width: 1280px;
-
-  margin-left: auto;
-
-  margin-right: auto;
-
-  padding-left: 24px;
-
-  padding-right: 24px;
-
+  margin: 0 auto;
+  padding: 0 24px;
 }
